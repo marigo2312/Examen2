@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Vuelos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Consulta y Compra de Boletos</h1>
+
+    <!-- Contenedor principal (visible al inicio) -->
+    <div id="container">
+        <!-- Menú desplegable para seleccionar horario de vuelo -->
+        <label for="horario">Seleccione un horario:</label>
+        <select id="horario">
+            <option value="mañana">Mañana - $100</option>
+            <option value="tarde">Tarde - $150</option>
+            <option value="noche">Noche - $200</option>
+        </select>
+
+        <!-- Botón para continuar con la compra -->
+        <button onclick="capturaDatos()">Continuar</button>
+    </div>
+
+    <!-- Contenedor del formulario (inicialmente oculto) -->
+    <div id="formulario" class="hidden">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre"><br><br>
+
+        <label for="boletos">Número de boletos:</label>
+        <input type="number" id="boletos" min="1"><br><br>
+
+        <!-- Contenedor donde se agregará dinámicamente el checkbox -->
+        <div id="descuento-container"></div>
+        <br>
+
+        <!-- Botón para calcular el total a pagar -->
+        <button onclick="calculaTotal()">Calcular Total</button>
+    </div>
+
+    <!-- Contenedor del resumen de compra (inicialmente oculto) -->
+    <div id="resultado" class="hidden">
+        <p id="resumen"></p>
+        <img src="https://via.placeholder.com/150" alt="Buen viaje">
+        <br><br>
+        <button onclick="limpiarDatos()">Limpiar</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
